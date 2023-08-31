@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Side Navigation Bar</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+  <style>
+    /* Set a fixed height for the side navigation bar */
+    .sidenav {
+      height: 100%;
+      width: 25%;
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #f8f9fa;
+      padding-top: 20px;
+    }
+
+    /* Style the navigation links */
+    .sidenav a {
+      padding: 8px 16px;
+      text-decoration: none;
+      color: black;
+      display: block;
+    }
+
+    /* Change color on hover */
+    .sidenav a:hover {
+      background-color: #343a40;
+      color: white;
+    }
+
+    /* Main content area */
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+      min-height: 100vh; /* Ensure the content takes at least full viewport height */
+      max-width: 70%;
+    }
+
+    .textArea {
+      position: sticky;
+      bottom: 0;
+      padding-top: 20px; /* Add spacing from the bottom of the content */
+    }
+
+    /* Limit the max width of the form */
+    .form-group {
+      max-width: 100vw; /* Adjust this value as needed */
+      margin: 0 auto; /* Center the form horizontally */
+    }
+  </style>
+</head>
+<body>
+
+<!-- Side Navigation Bar -->
+<div class="sidenav">
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Contact</a>
+</div>
+
+<!-- Main Content Area -->
+<div class="content">
+  <h1>Welcome to our Website</h1>
+  <p>This is a simple example of a webpage with a side navigation bar using Bootstrap.</p>
+
+  <form class="form-inline textArea">
+    <div class="form-group mx-sm-3 mb-2 row">
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="inputText" placeholder="Enter text">
+      </div>
+      <div class="col-sm-2">
+        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

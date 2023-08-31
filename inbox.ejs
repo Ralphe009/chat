@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+
+.bodySection {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      height: 100vh;
+    }
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {
+      height: 100%;
+    }
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: black;
+      height: 100%;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {
+        height: auto;
+      }
+    }
+    
+    /* Set chat area to cover 100% and have a scroll bar */
+    .chatArea {
+      height: 85%;
+      overflow-y: scroll;
+      padding-left: 20px; /* Add padding to the left */
+      padding-top: 20px;
+    }
+    .textArea {
+      position: fixed;
+      bottom: 0;
+      padding: 20px;
+      height: auto;
+      width: 77vw;
+    }
+    .chatBox {
+        height: 100vh;
+        overflow: hidden;
+    }
+    form {
+    display: flex;
+    
+    }
+    input[type="text"] {
+    flex: 4;
+    }
+    #logo {
+      width: 15%; /* Make the image responsive */
+      max-height: 15%; /* Set the maximum height to 25% of the form container */
+      margin: auto; /* Center the image horizontally */
+      display: block;
+      padding-top: 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="container-fluid bodySection">
+  <div class="row content">
+    
+
+    <div class="col-sm-9 chatBox container">
+        <div class="row chatArea">
+            <div>
+                <div class="col-sm-2 text-center">
+                    <img src="https://i.ibb.co/fp6v2KV/mcai.png" class="img-circle" height="65" width="65" alt="Avatar">
+                </div>
+                <div class="col-sm-10">
+                    <h4>Academmi <small></small></h4>
+                    <p>I am you AI assistant, how can i help you?</p>
+                    <br>
+                </div>
+            </div>
+            <% chat.history.forEach(function(convo){ %>
+                <div class="col-sm-2 text-center">
+                  <img src="<%= convo.role === 'assistant' ? 'https://i.ibb.co/fp6v2KV/mcai.png' : 'https://pbs.twimg.com/media/E9sN5jzVUAUgYHn.png' %>" class="img-circle" height="65" width="65" alt="Avatar">
+                </div>
+                <div class="col-sm-10">
+                  <h4><%= convo.role %> <small>Sep 25, 2015, 8:25 PM</small></h4>
+                  <p><%= convo.content %></p>
+                  <br>
+                </div>
+              <% }); %>
+           
+        </div>
+        <div class="row  textArea container">
+            <form id="frm" action='/chat/<%= chat._id %>/sendmessage' method="post">
+                <input class="text" type="text" name="prompt" id="txtUserURL" placeholder="Stack Overflow URL" />
+                <input type="submit"  class="btn btn-success" />
+            </form>
+        </div>
+    </div>
+
+    <div class="col-sm-3 sidenav">
+        <a href="/"><img id="logo" src="https://i.ibb.co/dJpjmxc/demmi.png" alt="mc1" border="0"></a>
+        <br><br>
+        <ul class="nav nav-pills nav-stacked">
+          <li class="active"><a href="#section1">Home</a></li>
+          <li><a href="#section2">Friends</a></li>
+          <li><a href="#section3">Family</a></li>
+          <li><a href="#section3">Photos</a></li>
+        </ul><br>
+      </div>
+  </div>
+</div>

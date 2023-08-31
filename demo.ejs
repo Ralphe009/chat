@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .sidenav {
+      background-color: grey; /* Grey background color */
+      min-height: 100vh; /* Minimum height to take up full viewport height */
+      padding-top: 20px;
+    }
+
+    .chatBox {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      min-height: 100vh; /* Ensure the content takes at least full viewport height */
+    }
+
+    .textArea {
+      position: fixed; /* Stick to the bottom of the viewport */
+      bottom: 0;
+      width: 100vh; /* Width of the form to fill .textArea width */
+      padding-top: 20px; /* Add spacing from the bottom of the content */
+    }
+
+    /* Limit the max width of the form */
+    .form-group {
+      min-width: 100%; /* Width of the form to fill available space */
+      margin: 0 auto; /* Center the form horizontally */
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid bodySection">
+  <div class="row content">
+    <div class="col-sm-9 chatBox container">
+      <div class="row chatArea">
+        <!-- Chat content here -->
+      </div>
+      <div class="row textArea container">
+        <form class="form-inline textArea">
+          <div class="form-group mx-sm-3 mb-2 row">
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputText" placeholder="Enter text">
+            </div>
+            <div class="col-sm-2">
+              <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-sm-3 sidenav">
+      <h4>John's Blog</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#section1">Home</a></li>
+        <li><a href="#section2">Friends</a></li>
+        <li><a href="#section3">Family</a></li>
+        <li><a href="#section3">Photos</a></li>
+      </ul><br>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+

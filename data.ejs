@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+    .container {
+      text-align: center;
+    }
+    #logo {
+      width: 10%; /* Make the image responsive */
+      max-height: 10%; /* Set the maximum height to 25% of the form container */
+      margin: auto; /* Center the image horizontally */
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="/"><img id="logo" src="https://i.ibb.co/dJpjmxc/demmi.png" alt="mc1" border="0"></a>
+    <h1><%= title %></h1>
+    <h4>Question:</h4>
+    <p><%= question %></p>
+    <h4>Answer:</h4>
+    <p><%= answer.answer %></p>
+  </div>
+</body>
+</html>

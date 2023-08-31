@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile-Responsive Page</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    .centered-form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    /* Adjust the form width for larger screens */
+    @media (min-width: 768px) {
+      .form-container {
+        width: 700px; /* Adjust this value as needed */
+        text-align: center; /* Center the form content */
+        
+      }
+      .form-control {
+        display: flex;
+        justify-content: center;
+      }
+    }
+    /* Center the button in the middle of the form */
+    .btn-center {
+      display: flex;
+      justify-content: center;
+    }
+    /* Responsive and centered logo */
+    #logo {
+      width: 25%; /* Make the image responsive */
+      max-height: 25%; /* Set the maximum height to 25% of the form container */
+      margin: auto; /* Center the image horizontally */
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container centered-form">
+    <div class="row">
+      <div class="col-12">
+        <div class="card form-container">
+          <div class="card-body">
+            <img id="logo" src="https://i.ibb.co/54h3hGg/mc1.png" alt="mc1" border="0">
+            <form action="/chat" method="post">
+              <div class="form-group">
+                <input type="text" class="form-control" name="text" id="inputData" placeholder="Ask a Question">
+              </div>
+              <br>
+              <div class="btn-center"> <!-- Center the button -->
+                <button type="submit" class="btn btn-danger">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
